@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6x6 Table</title>
+    <style>
+        table, tr, td {
+            border: 1px solid black; 
+            border-collapse: collapse;
+            text-align: center;
+            vertical-align: middle;
+            width: 100px;
+            height: 50px;
+        }
+        table {
+            margin: auto;
+            width: 80%; /* Adjust the width of the table */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            
+        <!-- <col span="3" style="background-color: aqua;" -->
+        <!-- <col span="1">
+        <col span="3" style="background-color: chartreuse;"> -->
+    <col span="1">
+    <col span="1" style="background-color: cornflowerblue;">
+
+    <col span="1" style="visibility: collapse;">
+    <col span="1" style="background-color: cornflowerblue;">
+    <col span="1" style="visibility: collapse;">
+    <col span="1"></colgroup>
+        <!-- First row -->
+        <tr>
+            <td rowspan="6">hours</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- Second row -->
+        <tr>
+            
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- Third row -->
+        <tr>
+            
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- Fourth row -->
+        <tr>
+            
+            <td colspan="5">lunch</td>
+            
+        </tr>
+        <!-- Fifth row -->
+        <tr>
+           
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="2" colspan="2">play</td>
+            
+        </tr>
+        <!-- Sixth row -->
+        <tr>
+            
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanium Light Beam Effect</title>
+    <style>
+        @keyframes titaniumLightPass {
+            0% {
+                text-shadow: none;
+                color: rgba(255, 0, 0, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 1);
+                color: rgba(255, 255, 255, 1);
+            }
+            100% {
+                text-shadow: none;
+                color: rgba(255, 0, 0, 0.5);
+            }
+        }
+
+        @keyframes titaniumHover {
+            0% {
+                box-shadow: none;
+                color: rgba(0, 0, 255, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 1);
+                color: rgba(255, 255, 255, 1);
+            }
+            100% {
+                text-shadow: none;
+                color: rgba(0, 0, 255, 0.5);
+            }
+        }
+
+        body {
+            background-color: #000; /* Dark background for contrast */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .red {
+            font-size: 20px;
+            color: rgba(255, 0, 0, 0.5);
+            text-shadow: none;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 2px;
+            margin: 10px 0;
+            position: relative;
+            animation: titaniumLightPass 3s infinite alternate; /* Light beam passing effect */
+        }
+
+        h3.red {
+            font-size: 22px;
+            color: rgba(0, 0, 255, 0.5);
+            text-shadow: none;
+            position: relative;
+            animation: titaniumHover 3s infinite alternate; /* Blue hover animation for contrast */
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05); /* Semi-transparent glass effect */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: neonGlow 4s infinite alternate; /* Neon glow pulsing effect */
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            animation: hoverRipple 3s infinite;
+        }
+
+        .box:hover {
+            transform: perspective(1000px) rotateY(10deg) rotateX(5deg); /* 3D rotation on hover */
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.7), 0 0 120px rgba(255, 255, 255, 1); /* Strong glow on hover */
+        }
+
+        @keyframes neonGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        @keyframes hoverRipple {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            }
+            100% {
+                box-shadow: 0 0 60px rgba(255, 255, 255, 0.6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let para1 = document.createElement('p');
+        para1.innerText = "hi i am red";
+        document.querySelector('body').append(para1);
+        para1.classList.add('red');
+
+        let h3 = document.createElement('h3');
+        h3.innerText = "hi i am h3 in blue";
+        document.querySelector('body').append(h3);
+        h3.classList.add('red'); // Using class 'red' for h3 with blue effect
+
+        let div = document.createElement('div');
+        let h1 = document.createElement('h1');
+        let para2 = document.createElement('p');
+        h1.innerText = 'samsung';
+        para2.innerText = 'apple';
+        div.classList.add('box');
+        div.append(h1);
+        div.append(para2);
+        document.querySelector('body').append(div);
+    </script>
+</body>
+</html>
